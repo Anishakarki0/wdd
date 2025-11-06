@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="admin-panel">
+    <h1>Admin Panel</h1>
+    <h2>Manage Your Portfolio</h2>
+
+    <!-- Login Page -->
+    <div class="login-page">
+      <h3>Login</h3>
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <label>Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <button onclick="login()">Login</button>
+      <p id="login-error" class="error-msg"></p>
+    </div>
+
+    <!-- Dashboard Overview -->
+    <div class="dashboard">
+      <h3>Dashboard Overview</h3>
+      <div class="overview">
+        <p>Portfolio Items Overview</p>
+        <p>Total Projects: <span id="total-projects">0</span></p>
+        <button onclick="viewProjects()">View All Projects</button>
+      </div>
+      <div class="overview">
+        <p>New Messages Overview</p>
+        <p>Unread Messages: <span id="unread-messages">0</span></p>
+        <button onclick="viewMessages()">View Messages</button>
+      </div>
+    </div>
+
+    <!-- Content Management -->
+    <div class="content-management">
+      <h3>Content Management</h3>
+      <button onclick="addNewProject()">Add New Project</button>
+      <ul id="project-list">
+        <!-- List of projects will be generated here -->
+      </ul>
+
+      <!-- Form for Adding/Editing Portfolio Items -->
+      <div id="project-form" class="project-form">
+        <h4>Add/Edit Project</h4>
+        <label>Project Title:</label>
+        <input type="text" id="project-title" placeholder="Enter project title" required>
+        <label>Description:</label>
+        <textarea id="project-description" placeholder="Enter description" required></textarea>
+        <label>Upload Images:</label>
+        <input type="file" id="project-image">
+        <button onclick="saveProject()">Save Changes</button>
+      </div>
+    </div>
+
+    <!-- Logout -->
+    <button class="logout" onclick="confirmLogout()">Logout</button>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <p id="modal-message">Are you sure you want to log out?</p>
+      <button onclick="confirmAction()">Yes</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
